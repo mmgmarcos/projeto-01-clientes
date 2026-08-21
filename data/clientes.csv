@@ -1,5 +1,5 @@
 id_cliente,nome,estado,idade
-1,João Silva,SP,35
+1,João Silva,SP,36
 2,Maria Oliveira,RJ,28
 3,Carlos Santos,MG,42
 4,Ana Souza,SP,150
@@ -9,3 +9,4 @@ id_cliente,nome,estado,idade
 8,Fernanda Rocha,RS,29
 9,Lucas Martins,MG,200
 10,Patrícia Gomes,SP,40
+11,Marcos Oliveira,SP,44
