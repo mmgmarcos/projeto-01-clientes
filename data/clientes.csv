@@ -10,3 +10,5 @@ id_cliente,nome,estado,idade
 9,Lucas Martins,MG,200
 10,Patrícia Gomes,SP,40
 11,Marcos Oliveira,SP,44
+12,Teste Pipeline,SP,30
+13,Novo Cliente,SP,25

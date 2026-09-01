@@ -59,46 +59,53 @@ def carregar_clientes(clientes):
 
 inicio = time.time()
 
-arquivo = "data/clientes.csv"
+try:
 
-clientes = pd.read_csv(arquivo)
+    arquivo = "data/clientes.csv"
 
-idade_valida = (
-    (clientes["idade"] >= 18)
-    & (clientes["idade"] <= 100)
-)
+    clientes = pd.read_csv(arquivo)
 
-clientes_validos = clientes[idade_valida]
+    idade_valida = (
+        (clientes["idade"] >= 18)
+        & (clientes["idade"] <= 100)
+    )
 
-clientes_quarentena = clientes[~idade_valida]
+    clientes_validos = clientes[idade_valida]
 
-total_lidos = len(clientes)
-total_validos = len(clientes_validos)
-total_rejeitados = len(clientes_quarentena)
+    clientes_quarentena = clientes[~idade_valida]
 
-clientes_quarentena.to_csv(
-    "data/clientes_quarentena.csv",
-    index=False
-)
+    total_lidos = len(clientes)
+    total_validos = len(clientes_validos)
+    total_rejeitados = len(clientes_quarentena)
 
-inseridos, atualizados =carregar_clientes(clientes_validos)
+    clientes_quarentena.to_csv(
+        "data/clientes_quarentena.csv",
+        index=False
+    )
 
-print("\nCLIENTES VÁLIDOS:")
-print(clientes_validos)
+    inseridos, atualizados = carregar_clientes(clientes_validos)
 
-print("\nCLIENTES EM QUARENTENA:")
-print(clientes_quarentena)
+    print("\nCLIENTES VÁLIDOS:")
+    print(clientes_validos)
 
-fim = time.time()
+    print("\nCLIENTES EM QUARENTENA:")
+    print(clientes_quarentena)
 
-print("\nRESUMO DA EXECUÇÃO:")
-print(f"Registros lidos: {total_lidos}")
-print(f"Registros válidos: {total_validos}")
-print(f"Registros rejeitados: {total_rejeitados}")
-print("\nBANCO DE DADOS:")
-print(f"Registros inseridos: {inseridos}")
-print(f"Registros atualizados: {atualizados}")
+    fim = time.time()
+
+    print("\nRESUMO DA EXECUÇÃO:")
+    print(f"Registros lidos: {total_lidos}")
+    print(f"Registros válidos: {total_validos}")
+    print(f"Registros rejeitados: {total_rejeitados}")
+    print("\nBANCO DE DADOS:")
+    print(f"Registros inseridos: {inseridos}")
+    print(f"Registros atualizados: {atualizados}")
 
 
-tempo_execucao = fim - inicio
-print(f"\nTempo de execução: {tempo_execucao:.2f} segundos")
+    tempo_execucao = fim - inicio
+    print(f"\nTempo de execução: {tempo_execucao:.2f} segundos")
+    print("\nSTATUS: SUCCESS")
+
+except Exception as erro:
+    print("\nSTATUS: FAILED")
+    print(f"Erro: {erro}")
