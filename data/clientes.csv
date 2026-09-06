@@ -12,3 +12,4 @@ id_cliente,nome,estado,idade
 11,Marcos Oliveira,SP,44
 12,Teste Pipeline,SP,30
 13,Novo Cliente,SP,25
+14,Cliente UF Invalida,XX,30

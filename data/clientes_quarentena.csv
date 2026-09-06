@@ -1,4 +1,5 @@
-id_cliente,nome,estado,idade
-4,Ana Souza,SP,150
-5,Pedro Lima,PR,17
-9,Lucas Martins,MG,200
+id_cliente,nome,estado,idade,motivo_rejeicao
+4,Ana Souza,SP,150,idade fora do intervalo permitido
+5,Pedro Lima,PR,17,idade fora do intervalo permitido
+9,Lucas Martins,MG,200,idade fora do intervalo permitido
+14,Cliente UF Invalida,XX,30,estado invalido
